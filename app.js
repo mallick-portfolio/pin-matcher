@@ -16,17 +16,20 @@ const actionLeft = document.getElementById('action-left');
 submit.addEventListener('click', (e) => {
   const showOutput = document.querySelector('.notify-section');
 
-  
+
 
   if (actionLeft.innerText == 0) {
     submit.setAttribute('disabled', false);
     document.getElementById('try-again').innerHTML = 'Please Generate Random Number Again';
   }
 
-  if (showRandom.value === '' || displayRandom.value === '') {
+  if (displayRandom.value === '') {
     alert('please Generate Pin');
     return false
-  }else {
+  } else if (showRandom.value === '') {
+    alert('please Type Pin Number');
+    return false
+  } else {
     actionLeft.innerText = parseInt(actionLeft.innerText) - 1;
   }
 
